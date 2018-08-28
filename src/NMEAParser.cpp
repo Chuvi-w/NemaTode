@@ -21,10 +21,10 @@ using namespace nmea;
 
 // --------- NMEA PARSE ERROR--------------
 
-NMEAParseError::NMEAParseError(std::string msg)
+NMEAParseError::NMEAParseError(const std::string& msg)
 	: message(msg)
 {}
-NMEAParseError::NMEAParseError(std::string msg, NMEASentence n)
+NMEAParseError::NMEAParseError(const std::string& msg, NMEASentence n)
 	: message(msg), nmea(n)
 {}
 
@@ -194,17 +194,17 @@ void NMEAParser::readLine(string cmd){
 }
 
 // Loggers
-void NMEAParser::onInfo(NMEASentence& nmea, string txt){
+void NMEAParser::onInfo(NMEASentence& nmea, const string& txt){
 	if (log){
 		cout << "[Info]    " << txt << endl;
 	}
 }
-void NMEAParser::onWarning(NMEASentence& nmea, string txt){
+void NMEAParser::onWarning(NMEASentence& nmea, const string& txt){
 	if (log){
 		cout << "[Warning] " << txt << endl;
 	}
 }
-void NMEAParser::onError(NMEASentence& nmea, string txt){
+void NMEAParser::onError(NMEASentence& nmea, const string& txt){
 	throw NMEAParseError("[ERROR] " + txt);
 }
 

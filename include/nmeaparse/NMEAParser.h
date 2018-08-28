@@ -73,8 +73,8 @@ public:
 	std::string message;
 	NMEASentence nmea;
 
-	NMEAParseError(std::string msg);
-	NMEAParseError(std::string msg, NMEASentence n);
+	NMEAParseError(const std::string& msg);
+	NMEAParseError(const std::string& msg, NMEASentence n);
 	virtual ~NMEAParseError();
 
 	std::string what();
@@ -92,9 +92,9 @@ private:
 
 	void parseText	(NMEASentence& nmea, std::string s);		//fills the given NMEA sentence with the results of parsing the string.
 	
-	void onInfo		(NMEASentence& n, std::string s);
-	void onWarning	(NMEASentence& n, std::string s);
-	void onError	(NMEASentence& n, std::string s);
+	void onInfo		(NMEASentence& n, const std::string& s);
+	void onWarning	(NMEASentence& n, const std::string& s);
+	void onError	(NMEASentence& n, const std::string& s);
 public:
 
 	NMEAParser();

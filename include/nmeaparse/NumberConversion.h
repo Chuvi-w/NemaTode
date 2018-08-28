@@ -22,7 +22,7 @@ namespace nmea {
 class NumberConversionError : public std::exception {
 public:
 	std::string message;
-	NumberConversionError(std::string msg)
+	NumberConversionError(const std::string& msg)
 		: message(msg)
 	{};
 
