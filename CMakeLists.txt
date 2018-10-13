@@ -41,5 +41,12 @@ install(EXPORT ${TARGET_NAME}-export
   NAMESPACE
     NemaTode::
   DESTINATION
-    cmake/${TARGET_NAME}
+    cmake
+)
+
+install(
+  FILES
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${TARGET_NAME}-config.cmake"
+  DESTINATION
+    cmake
 )
