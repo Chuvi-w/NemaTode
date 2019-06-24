@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Joe-DN/NemaTode.svg?branch=master)](https://travis-ci.com/Joe-DN/NemaTode)
+
 # NemaTode
 
 *Cross platform C++ 11 NMEA Parser & GPS Framework*
