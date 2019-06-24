@@ -17,3 +17,4 @@ after_success:
 - lcov --list coverage.info # debug info
 # Uploading report to CodeCov
 - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+- bash <(curl -s https://codecov.io/bash) -t 9837c571-5c8b-49b8-8056-9dccc40872e7
