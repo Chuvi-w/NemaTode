@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/Joe-DN/NemaTode.svg?branch=master)](https://travis-ci.com/Joe-DN/NemaTode)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/joe-dn/NemaTode.svg?color=green&label=version)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/joe-dn/NemaTode.svg?color=green&label=version&maxAge=3600)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # NemaTode
