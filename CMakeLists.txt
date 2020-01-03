@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8.10)
 project(NemaTode)
 
 set(TARGET_NAME NemaTode)
+string(TOLOWER "${TARGET_NAME}" TARGET_NAME_LOWERCASE)
 add_library(${TARGET_NAME} STATIC
     include/nmeaparse/Event.h
     include/nmeaparse/GPSFix.h
@@ -37,7 +38,7 @@ install(DIRECTORY include/ DESTINATION include)
 
 install(EXPORT ${TARGET_NAME}-export
   FILE
-    ${TARGET_NAME}-targets.cmake
+    ${TARGET_NAME_LOWERCASE}-targets.cmake
   NAMESPACE
     NemaTode::
   DESTINATION
@@ -46,7 +47,7 @@ install(EXPORT ${TARGET_NAME}-export
 
 install(
   FILES
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${TARGET_NAME}-config.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/${TARGET_NAME_LOWERCASE}-config.cmake"
   DESTINATION
     cmake
 )
