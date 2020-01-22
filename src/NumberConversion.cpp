@@ -15,7 +15,7 @@ using namespace std;
 namespace nmea {
 // Note: both parseDouble and parseInt return 0 with "" input.
 
-		double parseDouble(std::string s){
+		double parseDouble(const std::string& s){
 
 			char* p;
 			double d = ::strtod(s.c_str(), &p);
@@ -27,7 +27,7 @@ namespace nmea {
 			}
 			return d;
 		}
-		int64_t parseInt(std::string s, int radix){
+		int64_t parseInt(const std::string& s, int radix){
 			char* p;
 
 			int64_t d = ::strtoll(s.c_str(), &p, radix);

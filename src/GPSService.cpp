@@ -22,7 +22,7 @@ using namespace nmea;
 
 // ------ Some helpers ----------
 // Takes the NMEA lat/long format (dddmm.mmmm, [N/S,E/W]) and converts to degrees N,E only
-double convertLatLongToDeg(string llstr, string dir){
+double convertLatLongToDeg(const string& llstr, const string& dir){
 
 	double pd = parseDouble(llstr);
 	double deg = trunc(pd / 100);				//get ddd from dddmm.mmmm

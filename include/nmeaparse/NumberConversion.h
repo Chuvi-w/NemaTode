@@ -37,8 +37,8 @@ public:
 
 
 
-double parseDouble(std::string s);
-int64_t parseInt(std::string s, int radix = 10);
+double parseDouble(const std::string& s);
+int64_t parseInt(const std::string& s, int radix = 10);
 
 //void NumberConversion_test();
 
