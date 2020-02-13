@@ -79,6 +79,10 @@ void GPSService::attachToParser(NMEAParser& _parser){
 	_parser.setSentenceHandler("GPGGA", [this](const NMEASentence& nmea){
 		this->read_GPGGA(nmea);
 	});
+	// TODO: Make sure this is 100% compatible.
+	_parser.setSentenceHandler("GNGGA", [this](const NMEASentence& nmea){
+		this->read_GPGGA(nmea);
+	});
 	_parser.setSentenceHandler("GPGSA", [this](const NMEASentence& nmea){
 		this->read_GPGSA(nmea);
 	});
