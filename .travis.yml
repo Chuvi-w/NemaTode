@@ -1,0 +1,20 @@
+dist: trusty
+sudo: false
+language: cpp
+  
+script:
+  - cmake .
+  - cmake --build .
+
+addons:
+  apt:
+    packages: lcov
+
+after_success:
+# Create lcov report
+- lcov --capture --directory . --output-file coverage.info
+- lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter system-files
+- lcov --list coverage.info # debug info
+# Uploading report to CodeCov
+- bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+- bash <(curl -s https://codecov.io/bash) -t 9837c571-5c8b-49b8-8056-9dccc40872e7
