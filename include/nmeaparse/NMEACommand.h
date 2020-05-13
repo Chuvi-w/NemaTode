@@ -21,7 +21,7 @@ namespace nmea {
 			char checksum;
 			virtual ~NMEACommand() = default;
 			virtual std::string toString();
-			std::string addChecksum(std::string s);
+			std::string addChecksum(const std::string &s);
 		};
 
 
