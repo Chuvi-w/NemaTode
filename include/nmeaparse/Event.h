@@ -146,7 +146,9 @@ namespace nmea {
 		virtual ~Event() 
 		{}
 
-		Event(const Event& ref) 	{
+		Event(const Event& ref)
+			: enabled(true)
+		{
 			_copy(ref);
 		}
 
@@ -197,7 +199,7 @@ namespace nmea {
 		};
 
 		void operator ()(Args... args)													{ return call(args...); };
-		EventHandler<void(Args...)> operator +=(EventHandler<void(Args...)> handler)	{ return registerHandler(handler); };
+		EventHandler<void(Args...)> operator +=(const EventHandler<void(Args...)>& handler)	{ return registerHandler(handler); };
 		EventHandler<void(Args...)> operator +=(std::function<void(Args...)> handler)	{ return registerHandler(handler); };
 		bool operator -=(EventHandler<void(Args...)>& handler)							{ return removeHandler(handler); };
 		bool operator -=(uint64_t handlerID)											{ return removeHandler(handlerID); };

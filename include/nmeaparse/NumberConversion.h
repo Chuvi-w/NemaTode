@@ -20,7 +20,7 @@ namespace nmea {
 class NumberConversionError : public std::exception {
 public:
 	std::string message;
-	NumberConversionError(std::string msg)
+	NumberConversionError(const std::string& msg)
 		: message(msg)
 	{};
 
@@ -35,8 +35,8 @@ public:
 
 
 
-double parseDouble(std::string s);
-int64_t parseInt(std::string s, int radix = 10);
+double parseDouble(const std::string& s);
+int64_t parseInt(const std::string& s, int radix = 10);
 
 //void NumberConversion_test();
 
