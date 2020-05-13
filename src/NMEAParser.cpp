@@ -200,7 +200,7 @@ void NMEAParser::onError(NMEASentence& nmea, string txt){
 
 // takes a complete NMEA string and gets the data bits from it,
 // calls the corresponding handler in eventTable, based on the 5 letter sentence code
-void NMEAParser::readSentence(std::string cmd){
+NMEASentence NMEAParser::readSentence(std::string cmd){
 
 	NMEASentence nmea;
 
@@ -208,7 +208,7 @@ void NMEAParser::readSentence(std::string cmd){
 	
 	if (cmd.empty()){
 		onWarning(nmea, "Blank string -- Skipped processing.");
-		return;
+		return nmea;
 	}
 	
 	// If there is a newline at the end (we are coming from the byte reader
@@ -264,7 +264,7 @@ void NMEAParser::readSentence(std::string cmd){
 		}
 
 		onError(nmea, ss.str());
-		return;
+		return nmea;
 	}
 	
 
@@ -289,6 +289,7 @@ void NMEAParser::readSentence(std::string cmd){
 
 
 	cout.flags(oldflags);  //reset
+	return nmea;
 
 }
 

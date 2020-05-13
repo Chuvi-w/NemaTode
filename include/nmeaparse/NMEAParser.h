@@ -110,7 +110,7 @@ public:
 	void readLine		(std::string line);
 
 	// This function expects the data to be a single line with an actual sentence in it, else it throws an error.
-	void readSentence	(std::string cmd);				// called when parser receives a sentence from the byte stream. Can also be called by user to inject sentences.
+	NMEASentence readSentence	(std::string cmd);				// called when parser receives a sentence from the byte stream. Can also be called by user to inject sentences.
 
 	static uint8_t calculateChecksum(std::string);		// returns checksum of string -- XOR
 
