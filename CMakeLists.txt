@@ -28,7 +28,7 @@ set(sources
 	src/NumberConversion.cpp
 )
 
-add_library(${PROJECT_NAME} STATIC ${headers} ${sources})
+add_library(${PROJECT_NAME} SHARED ${headers} ${sources})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
 	VERSION ${PROJECT_VERSION}
